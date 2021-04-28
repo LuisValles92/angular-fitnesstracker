@@ -1,0 +1,12 @@
+.example-container {
+    height: 300px;
+    /* https://developer.mozilla.org/es/docs/Web/CSS/overflow */
+    overflow: auto;
+    border: 1px solid gray;
+}
+
+.example-button {
+    display: block;
+    /* top right bottom left margin value */
+    margin: 60px auto 60px;
+}
