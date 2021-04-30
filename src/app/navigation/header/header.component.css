@@ -12,3 +12,7 @@ a:hover, a:active {
     padding: 0;
     margin: 0;
 }
+
+.logout {
+    cursor: pointer;
+}
