@@ -10,8 +10,8 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
             <p>You already got {{ passedData.progressSpinner }}%</p>
         </mat-dialog-content>
         <mat-dialog-actions>
-            <button mat-button [mat-dialog-close]="true">Yes</button>
-            <button mat-button [mat-dialog-close]="false">No</button>
+            <button mat-flat-button color="accent" [mat-dialog-close]="true">Yes</button>
+            <button mat-flat-button color="primary" [mat-dialog-close]="false">No</button>
         </mat-dialog-actions>
     `
 })
