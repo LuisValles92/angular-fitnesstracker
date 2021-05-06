@@ -11,10 +11,10 @@
         <mat-icon>fitness_center</mat-icon>
         <span class="nav-caption">Training</span>
     </a>
-    <mat-list-item *ngIf="isAuth">
-        <button mat-icon-button disableRipple="true" (click)="onLogout()">
+    <mat-action-list *ngIf="isAuth">
+        <button mat-list-item (click)="onLogout()">
             <mat-icon>eject</mat-icon>
             <span class="nav-caption">Logout</span>
         </button>
-    </mat-list-item>
+    </mat-action-list>
 </mat-nav-list>

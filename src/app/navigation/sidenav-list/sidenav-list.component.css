@@ -1,9 +1,4 @@
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover, a:active {
+a:hover, a:active, button:hover, button:active {
     color: lightgray;
 }
 
