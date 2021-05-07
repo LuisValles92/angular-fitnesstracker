@@ -10,13 +10,14 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  hide = true;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl('d@d', { validators: [Validators.required, Validators.email] }),
-      password: new FormControl('d', { validators: [Validators.required] })
+      email: new FormControl('luisvalles92@hotmail.com', { validators: [Validators.required, Validators.email] }),
+      password: new FormControl('luisvalles92', { validators: [Validators.required] })
     });
   }
 

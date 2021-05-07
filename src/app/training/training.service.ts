@@ -36,7 +36,8 @@ export class TrainingService {
                 (result: Exercise[]) => {
                     this.availableExercises = result;
                     this.exercisesChanged.next([...this.availableExercises]);
-                }
+                },
+                error => console.log(error)
             );
     }
 
@@ -79,7 +80,8 @@ export class TrainingService {
         this.db.collection('finishedExercises').valueChanges().subscribe(
             (result: Exercise[]) => {
                 this.finishedExercisesChanged.next(result);
-            }
+            },
+            error => console.log(error)
         );
     }
 

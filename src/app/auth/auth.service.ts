@@ -4,46 +4,52 @@ import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 
 import { AuthData } from "./auth-data.model";
-import { User } from "./user.model";
+
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class AuthService {
-    private user: User;
+    private isAuthenticated: boolean = false;
     authChange = new Subject<boolean>();
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
     registerUser(authData: AuthData): void {
-        this.user = {
-            email: authData.email,
-            userId: Math.round(Math.random() * 10000).toString()
-        };
-        this.authSuccessfully();
+        this.afAuth.auth
+            .createUserWithEmailAndPassword(authData.email, authData.password)
+            .then(result => {
+                console.log(result);
+                this.authSuccessfully();
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     login(authData: AuthData): void {
-        this.user = {
-            email: authData.email,
-            userId: Math.round(Math.random() * 10000).toString()
-        };
-        this.authSuccessfully();
+        this.afAuth.auth
+            .signInWithEmailAndPassword(authData.email, authData.password)
+            .then(result => {
+                console.log(result);
+                this.authSuccessfully();
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     logout(): void {
-        this.user = null;
         this.authChange.next(false);
         this.router.navigate(['/login']);
-    }
-
-    getUser(): User {
-        return { ...this.user };
+        this.isAuthenticated = false;
     }
 
     isAuth(): boolean {
-        return this.user != null;
+        return this.isAuthenticated;
     }
 
     private authSuccessfully(): void {
+        this.isAuthenticated = true;
         this.authChange.next(true);
         this.router.navigate(['/training']);
     }
