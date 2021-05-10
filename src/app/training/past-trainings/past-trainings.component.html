@@ -2,8 +2,8 @@
     <div fxLayoutAlign="center center">
         <mat-form-field fxFlex="40%" fxFlex.xs="60%">
             <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter by any column"
-                [(ngModel)]="value">
-            <button mat-icon-button *ngIf="value" matSuffix (click)="value=''; doFilter('')">
+                [(ngModel)]="filterValue">
+            <button mat-icon-button *ngIf="filterValue" matSuffix (click)="filterValue=''; doFilter('')">
                 <mat-icon>close</mat-icon>
             </button>
         </mat-form-field>
@@ -38,10 +38,12 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-
-    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
-    </mat-paginator>
 </div>
+
+<div [hidden]="!dataSource.data.length">
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+</div>
+
 <div *ngIf="!dataSource.data.length" fxLayoutAlign="center center">
     <p>There isn't record of past exercises yet.</p>
 </div>
