@@ -11,7 +11,7 @@ import { UIService } from "../shared/ui.service";
 
 @Injectable()
 export class AuthService {
-    private isAuthenticated: boolean = false;
+    private isAuthenticated = false;
     authChange = new Subject<boolean>();
 
     constructor(

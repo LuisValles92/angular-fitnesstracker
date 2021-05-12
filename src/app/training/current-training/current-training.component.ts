@@ -11,7 +11,7 @@ import { StopTrainingModalComponent } from './stop-training-modal.component';
   styleUrls: ['./current-training.component.css']
 })
 export class CurrentTrainingComponent implements OnInit {
-  progress: number = 0;
+  progress = 0;
   timer: number;
 
   constructor(private dialog: MatDialog, private trainingService: TrainingService) { }
@@ -21,24 +21,24 @@ export class CurrentTrainingComponent implements OnInit {
   }
 
   startOrResumeTimer(): void {
-    const STEP = this.trainingService.getRunningExercise().duration / 100 * 1000;
+    const step = this.trainingService.getRunningExercise().duration / 100 * 1000;
     this.timer = window.setInterval(() => {
       this.progress += 1;
       if (this.progress >= 100) {
         this.trainingService.completeExercise();
         clearInterval(this.timer);
       }
-    }, STEP);
+    }, step);
   }
 
   onStop(): void {
     clearInterval(this.timer);
-    const DIALOGREF = this.dialog.open(StopTrainingModalComponent, {
+    const dialogref = this.dialog.open(StopTrainingModalComponent, {
       data: {
         progressSpinner: this.progress
       }
     });
-    DIALOGREF.afterClosed().subscribe(
+    dialogref.afterClosed().subscribe(
       result => {
         // console.log(result);
         (result) ? this.trainingService.cancelExercise(this.progress) : this.startOrResumeTimer();
