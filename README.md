@@ -7,7 +7,7 @@ Comandos:
 npm install  
 ng serve  
   
-Para modificaciones es necesario construir (si se va a desplegar) y desplegar de nuevo:  
+Para modificaciones es necesario construir (si se va a desplegar, pasar a producción a un servidor real) y desplegar de nuevo:  
 ng build --prod  
 firebase deploy  
   
