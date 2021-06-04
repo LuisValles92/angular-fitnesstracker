@@ -6,6 +6,8 @@ Use Angular, Angular Material, Angularfire (+ Firebase with Firestore) and NgRx 
 Comandos:  
 npm install  
 ng serve  
+  
+Para modificaciones es necesario construir (si se va a desplegar) y desplegar de nuevo:  
 ng build --prod  
 firebase deploy  
   
