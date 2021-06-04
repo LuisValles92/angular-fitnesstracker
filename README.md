@@ -1,3 +1,10 @@
+# angular-fitnesstracker
+_Angular | Angular Material | Angularfire | NgRx | Firebase_  
+Curso: Angular (Full App) with Angular Material, Angularfire & NgRx - Aplicación desplegada sobre Firebase Hosting.  
+Use Angular, Angular Material, Angularfire (+ Firebase with Firestore) and NgRx to build a real Angular App.  
+  
+[Enlace](https://ng-fitness-tracker-6add0.web.app) | [Enlace alternativo](https://ng-fitness-tracker-6add0.firebaseapp.com) | [Curso](https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/) | [Repositorio](https://github.com/LuisValles92/angular-fitnesstracker)
+  
 # FitnessTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
