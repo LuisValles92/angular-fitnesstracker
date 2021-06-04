@@ -1,5 +1,5 @@
 # angular-fitnesstracker
-_Angular | Angular Material | Angularfire | NgRx | Firebase_  
+_Angular | Angular Material | Angularfire | NgRx | Responsive | Firebase_  
 Curso: Angular (Full App) with Angular Material, Angularfire & NgRx - Aplicación desplegada sobre Firebase Hosting.  
 Use Angular, Angular Material, Angularfire (+ Firebase with Firestore) and NgRx to build a real Angular App.  
   
