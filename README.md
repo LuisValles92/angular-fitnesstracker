@@ -3,6 +3,12 @@ _Angular | Angular Material | Angularfire | NgRx | Responsive | Firebase_
 Curso: Angular (Full App) with Angular Material, Angularfire & NgRx - Aplicación desplegada sobre Firebase Hosting.  
 Use Angular, Angular Material, Angularfire (+ Firebase with Firestore) and NgRx to build a real Angular App.  
   
+Comandos:  
+npm install  
+ng serve  
+ng build --prod  
+firebase deploy  
+  
 [Enlace](https://ng-fitness-tracker-6add0.web.app) | [Enlace alternativo](https://ng-fitness-tracker-6add0.firebaseapp.com) | [Curso](https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/) | [Repositorio](https://github.com/LuisValles92/angular-fitnesstracker)
   
 # FitnessTracker
